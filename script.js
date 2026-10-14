@@ -1,13 +1,29 @@
+
 let todos = [
     {id: 1, text: "Learn JavaScript"},
     {id: 2, text: "Build a to-do app"},
     {id: 3, text: "Master DOM manipulation"}
 ];
 
-// TODO: Select and store references to the necessary DOM elements:
-// - todoList: the <ul> element to contain the todo items
-// - todoInput: the input field for new todos
-// - addButton: the button to add new todos
+const todoList = document.getElementById(todoList)
+const todoInput = document.getElementById(todoInput)
+const addButton = document.getElementById(addButton)
+
+
+function createTodoElement(todo) {
+    const li = document.createElement('li')
+    li.className = 'todo-item'
+
+    const span = document.createElement('span')
+    li.className = 'todo-text'
+    todo.span
+
+    li.appendChild(span)
+
+    return li
+
+
+}
 
 // Create todo item element
 function createTodoElement(todo) {
