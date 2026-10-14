@@ -15,10 +15,18 @@ function createTodoElement(todo) {
     li.className = 'todo-item'
 
     const span = document.createElement('span')
-    li.className = 'todo-text'
-    todo.span
+    span.className = 'todo-text'
+    span.textContent = todo.text
+
+    const deleteBtn = document.createElement('button')
+    deleteBtn.className = 'delete-button'
+    deleteBtn.textContent = 'Delete'
+    deleteBtn.addEventListener('click', () => {
+        deleteTodo(todo.id)
+    }) 
 
     li.appendChild(span)
+    li.appendChild(deleteBtn)
 
     return li
 
