@@ -43,28 +43,44 @@ function renderTodos() {
     
 }
 
-
-// Add todo
 function addTodo() {
-    // TODO: Implement this function
-    // 1. Get the text from the input field
-    // 2. If the text is not empty:
-    //    a. Create a new todo object with a unique id and the input text
-    //    b. Add the new todo object to the todos array
-    //    c. Clear the input field
-    //    d. Call renderTodos() to update the display
+    const navn = todoInput.value
+
+    if (navn !== '') {
+        const newTodo = { id: Date.now(), text: navn}
+        todos.push(newTodo) 
+        todoInput.value = ''
+        renderTodos()
+    }
 }
 
-// Delete todo
 function deleteTodo(id) {
-    // TODO: Implement this function
-    // 1. Remove the todo with the given id from the todos array
-    // 2. Call renderTodos() to update the display
+    const nyListe = []
+
+    todos.forEach ( todo => {
+        if (todo.id !== id) {
+        nyListe.push(todo)
+        }
+    })
+
+    todos = nyListe
+    renderTodos()
 }
 
-// TODO: Add a click event listener to the add button that calls addTodo
+addButton.addEventListener('click', () => {
+        addTodo()
+})
 
-// TODO: Add a keypress event listener to the input field 
-// that calls addTodo when the Enter key is pressed
+addButton.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        addTodo()
+    }
+})
+
+todoInput.addEventListener('keypress', (event) => {
+    if (event.key === 'Enter') {
+        addTodo()
+    }
+})
 
 renderTodos();
