@@ -5,9 +5,9 @@ let todos = [
     {id: 3, text: "Master DOM manipulation"}
 ];
 
-const todoList = document.getElementById(todoList)
-const todoInput = document.getElementById(todoInput)
-const addButton = document.getElementById(addButton)
+const todoList = document.getElementById('todo-list')
+const todoInput = document.getElementById('todo-input')
+const addButton = document.getElementById('add-button')
 
 
 function createTodoElement(todo) {
@@ -31,19 +31,6 @@ function createTodoElement(todo) {
     return li
 
 
-}
-
-// Create todo item element
-function createTodoElement(todo) {
-    // TODO: Implement this function
-    // 1. Create a new <li> element
-    // 2. Add the 'todo-item' class to the <li>
-    // 3. Create a <span> for the todo text
-    // 4. Set the span's text content to todo.text
-    // 5. Create a delete button
-    // 6. Add a click event listener to the delete button that calls deleteTodo(todo.id)
-    // 7. Append the span and delete button to the <li>
-    // 8. Return the <li> element
 }
 
 // Render todos
